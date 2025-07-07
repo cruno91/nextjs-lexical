@@ -60,6 +60,9 @@ importers:
 
   apps/nextlex:
     dependencies:
+      '@repo/editor':
+        specifier: workspace:*
+        version: link:../../packages/editor
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -124,9 +127,19 @@ importers:
       '@lexical/react':
         specifier: ^0.33.0
         version: 0.33.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(yjs@13.6.27)
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../ui
       lexical:
         specifier: ^0.33.0
         version: 0.33.0
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
 
   packages/eslint-config:
     devDependencies:

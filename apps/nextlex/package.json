@@ -9,6 +9,7 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
+    "@repo/editor": "workspace:*",
     "@repo/ui": "workspace:*",
     "lucide-react": "catalog:",
     "next": "15.3.4",

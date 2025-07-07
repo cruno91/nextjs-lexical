@@ -2,6 +2,7 @@
   "name": "@repo/editor",
   "version": "0.0.0",
   "private": true,
+  "main": "src/index.ts",
   "scripts": {
     "dev": "echo 'Add dev script here'",
     "build": "echo 'Add build script here'",
@@ -9,6 +10,15 @@
     "lint": "echo 'Add lint script here'"
   },
   "dependencies": {
+    "@lexical/react": "^0.33.0",
+    "lexical": "^0.33.0",
+    "@repo/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
+  },
+  "peerDependencies": {
     "@lexical/react": "^0.33.0",
     "lexical": "^0.33.0"
   }

@@ -7,7 +7,7 @@ import {
   LexicalErrorBoundary
 } from "@lexical/react";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
-import { MyButtonPlugin } from "./plugins/MyButtonPlugin";
+// import { MyButtonPlugin } from "./plugins/MyButtonPlugin";
 
 const theme = {
   // define theme classes if needed
@@ -30,7 +30,7 @@ export function Editor() {
         ErrorBoundary={LexicalErrorBoundary}
       />
       <HistoryPlugin />
-      <MyButtonPlugin />
+      {/*<MyButtonPlugin />*/}
     </LexicalComposer>
   );
 }
