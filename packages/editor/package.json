@@ -20,6 +20,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/react": "catalog:react",
-    "@types/react-dom": "catalog:react"
+    "@types/react-dom": "catalog:react",
+    "tailwindcss": "catalog:"
   }
 }

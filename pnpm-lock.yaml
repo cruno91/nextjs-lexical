@@ -152,6 +152,9 @@ importers:
       '@types/react-dom':
         specifier: catalog:react
         version: 19.1.6(@types/react@19.1.6)
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 3.4.13
 
   packages/eslint-config:
     devDependencies:
