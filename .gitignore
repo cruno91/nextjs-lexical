@@ -1,0 +1,52 @@
+# Misc
+.DS_Store
+*.pem
+Thumbs.db
+*~
+*.log
+*.rej
+*.orig
+
+# IDE
+.idea
+.vscode
+.editorconfig
+.gitattributes
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.lando.local.manual.env
+.lando.local.env
+!.lando.env
+.lando.local.yml
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+.pnpm-store
+.yarn/*
+.yarn/cache/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Turborepo
+.turbo
+
+# Vercel
+.vercel

@@ -1,0 +1,73 @@
+name: nextlex
+env_file:
+  - .lando.env
+  - .lando.local.env
+services:
+  turborepo:
+    type: node:22
+    scanner:
+      okCodes:
+        - 404
+        - 502
+        - ECONNRESET
+    ssl: true
+    sslExpose: true
+    build_as_root:
+      - apt-get update -y && apt-get install -y --no-install-recommends apt-utils
+      - apt-get update -y && apt-get install -y apt-transport-https build-essential unzip
+    build:
+      - echo '\033[1;96m'"|------------- Installing monorepo dependencies -------------|"
+      - mkdir -p /var/www/.npm-global/lib
+      - npm install --global corepack@latest
+      - corepack install
+      - pnpm install
+  next:
+    type: node:22
+    port: 3000
+    ssl: true
+    sslExpose: true
+    scanner:
+      okCodes:
+        - 404
+        - 502
+        - ECONNRESET
+    build_as_root:
+      - apt-get update -y && apt-get install -y --no-install-recommends apt-utils
+      - apt-get update -y && apt-get install -y apt-transport-https build-essential unzip
+    build:
+      - mkdir -p /var/www/.npm-global/lib
+      - npm install --global corepack@latest
+      - corepack install
+      - pnpm install
+
+proxy:
+  next:
+    - nextlex.lndo.site:3000
+
+tooling:
+  pnpm:
+    service: turborepo
+    cmd: pnpm
+  pnpx:
+    service: turborepo
+    cmd: pnpx
+  turbo:
+    service: next
+    cmd: turbo
+    dir: /app
+  shadcn:
+    service: turborepo
+    cmd: pnpm ui
+    dir: /app/packages/ui
+  next:
+    service: next
+    cmd: next
+    dir: /app/apps/nextlex
+  dev:
+    service: next
+    cmd: pnpm dev
+    dir: /app/apps/nextlex
+  prod:
+    service: next
+    cmd: pnpm build && pnpm start
+    dir: /app/apps/nextlex

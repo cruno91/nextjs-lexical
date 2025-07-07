@@ -1,0 +1,23 @@
+{
+  "name": "nextlex-test",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "ui": "pnpm --filter @repo/ui ui"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "prettier": "catalog:",
+    "turbo": "2.5.4"
+  },
+  "packageManager": "pnpm@10.11.1",
+  "engines": {
+    "node": ">=22.16.0"
+  }
+}
