@@ -12,14 +12,14 @@
   "dependencies": {
     "@lexical/react": "^0.33.0",
     "lexical": "^0.33.0",
-    "@repo/ui": "workspace:*"
+    "@repo/ui": "workspace:*",
+    "react": "catalog:react",
+    "react-dom": "catalog:react"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*"
-  },
-  "peerDependencies": {
-    "@lexical/react": "^0.33.0",
-    "lexical": "^0.33.0"
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "catalog:react",
+    "@types/react-dom": "catalog:react"
   }
 }

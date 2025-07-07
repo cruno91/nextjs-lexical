@@ -1,11 +1,9 @@
 "use client";
 
-import {
-  LexicalComposer,
-  RichTextPlugin,
-  ContentEditable,
-  LexicalErrorBoundary
-} from "@lexical/react";
+import { LexicalComposer } from "@lexical/react/LexicalComposer"
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
+import { ContentEditable } from "@lexical/react/LexicalContentEditable"
+import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary"
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 // import { MyButtonPlugin } from "./plugins/MyButtonPlugin";
 

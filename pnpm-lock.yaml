@@ -133,6 +133,12 @@ importers:
       lexical:
         specifier: ^0.33.0
         version: 0.33.0
+      react:
+        specifier: catalog:react
+        version: 19.1.0
+      react-dom:
+        specifier: catalog:react
+        version: 19.1.0(react@19.1.0)
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -140,6 +146,12 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
+      '@types/react':
+        specifier: catalog:react
+        version: 19.1.6
+      '@types/react-dom':
+        specifier: catalog:react
+        version: 19.1.6(@types/react@19.1.6)
 
   packages/eslint-config:
     devDependencies:
