@@ -5,11 +5,10 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
 import { ContentEditable } from "@lexical/react/LexicalContentEditable"
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary"
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
-// import { MyButtonPlugin } from "./plugins/MyButtonPlugin";
 
-const theme = {
-  // define theme classes if needed
-};
+import theme from "./EditorTheme";
+
+// import { MyButtonPlugin } from "./plugins/MyButtonPlugin";
 
 export function Editor() {
   const initialConfig = {
