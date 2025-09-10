@@ -124,6 +124,9 @@ importers:
 
   packages/editor:
     dependencies:
+      '@lexical/link':
+        specifier: ^0.33.1
+        version: 0.33.1
       '@lexical/react':
         specifier: ^0.33.1
         version: 0.33.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(yjs@13.6.27)

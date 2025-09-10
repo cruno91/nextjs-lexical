@@ -13,12 +13,15 @@ import { UnderlineToolbarPlugin } from "./plugins/UnderlineToolbarPlugin";
 import { StrikethroughToolbarPlugin } from "./plugins/StrikethroughToolbarPlugin";
 import { TextStyleDropdownPlugin } from "./plugins/TextStyleDropdownPlugin";
 import { HeadingNode } from "@lexical/rich-text";
+import { LinkNode } from "@lexical/link";
+import { ButtonLinkNode } from "./nodes/ButtonLinkNode";
+import { LinkStylesPlugin } from "./plugins/LinkStylesPlugin";
 
 export function Editor() {
   const initialConfig = {
     namespace: "MyEditor",
     theme,
-    nodes: [HeadingNode],
+    nodes: [HeadingNode, LinkNode, ButtonLinkNode],
     onError: (error: Error) => {
       console.error("Lexical error:", error);
     },
@@ -32,6 +35,7 @@ export function Editor() {
         <ItalicToolbarPlugin />
         <UnderlineToolbarPlugin />
         <StrikethroughToolbarPlugin />
+        <LinkStylesPlugin />
       </div>
       <RichTextPlugin
         contentEditable={<ContentEditable className="editor-input" />}
