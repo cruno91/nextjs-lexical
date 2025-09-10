@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@lexical/react": "^0.33.1",
+    "@lexical/rich-text": "^0.33.1",
+    "@lexical/selection": "^0.33.1",
     "@repo/ui": "workspace:*",
     "lexical": "^0.33.1",
     "react": "catalog:react",
