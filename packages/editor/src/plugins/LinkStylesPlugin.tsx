@@ -11,8 +11,15 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@repo/ui/components/ui/dialog";
-import { Button } from "@repo/ui/components/ui/button";
+import { Button, buttonVariants } from "@repo/ui/components/ui/button";
 import { Input } from "@repo/ui/components/ui/input";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@repo/ui/components/ui/dropdown-menu";
+import theme from "../EditorTheme";
 import { $createButtonLinkNode } from "../nodes/ButtonLinkNode";
 
 export function LinkStylesPlugin() {
@@ -80,9 +87,37 @@ export function LinkStylesPlugin() {
 
   return (
     <>
-      <Button type="button" variant="outline" onClick={() => setOpen(true)} title="Insert link or button">
-        Link
-      </Button>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button type="button" size="sm" variant="ghost" title="Insert link or button">
+            Link
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="start" className="w-64">
+          <DropdownMenuItem
+            onClick={() => {
+              setMode("link");
+              setOpen(true);
+            }}
+          >
+            <div className="flex w-full items-center justify-between gap-3">
+              <span className="text-sm">Standard link</span>
+              <span className={theme.link}>example.com</span>
+            </div>
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => {
+              setMode("button");
+              setOpen(true);
+            }}
+          >
+            <div className="flex w-full items-center justify-between gap-3">
+              <span className="text-sm">Button link</span>
+              <span className={buttonVariants({ size: "sm" })}>Link</span>
+            </div>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent>
           <DialogHeader>
