@@ -55,7 +55,7 @@ export function TextStyleDropdownPlugin() {
     <select
       onChange={onChange}
       defaultValue="paragraph"
-      className="px-2 py-1 text-sm rounded border bg-white dark:bg-gray-800 dark:text-white"
+      className="h-8 px-2 text-sm rounded-md border border-input bg-background text-foreground ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
       aria-label="Text style"
       title="Text style"
     >

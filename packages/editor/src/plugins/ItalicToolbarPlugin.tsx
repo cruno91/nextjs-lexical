@@ -3,6 +3,7 @@
 import { useCallback } from "react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { FORMAT_TEXT_COMMAND } from "lexical";
+import { Button } from "@repo/ui/components/ui/button";
 
 export function ItalicToolbarPlugin() {
   const [editor] = useLexicalComposerContext();
@@ -12,14 +13,16 @@ export function ItalicToolbarPlugin() {
   }, [editor]);
 
   return (
-    <button
+    <Button
       type="button"
       onClick={onItalicClick}
-      className="px-2 py-1 text-sm rounded border bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+      variant="ghost"
+      size="sm"
       aria-label="Toggle italic"
       title="Italic (Ctrl/Cmd + I)"
+      className="h-8"
     >
       <span className="italic">I</span>
-    </button>
+    </Button>
   );
 }

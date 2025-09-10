@@ -29,19 +29,23 @@ export function Editor() {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <div className="flex items-center gap-2 mb-2 border-b pb-2">
-        <TextStyleDropdownPlugin />
-        <BoldToolbarPlugin />
-        <ItalicToolbarPlugin />
-        <UnderlineToolbarPlugin />
-        <StrikethroughToolbarPlugin />
-        <LinkStylesPlugin />
+      <div className="rounded-lg border bg-background shadow-sm focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background">
+        <div className="flex items-center gap-1 border-b bg-muted/50 p-2 rounded-t-lg">
+          <TextStyleDropdownPlugin />
+          <BoldToolbarPlugin />
+          <ItalicToolbarPlugin />
+          <UnderlineToolbarPlugin />
+          <StrikethroughToolbarPlugin />
+          <LinkStylesPlugin />
+        </div>
+        <div className="relative">
+          <RichTextPlugin
+            contentEditable={<ContentEditable className="min-h-[180px] p-4 outline-none leading-7 text-foreground" />}
+            placeholder={<div className="pointer-events-none absolute left-4 top-4 text-muted-foreground">Start typing…</div>}
+            ErrorBoundary={LexicalErrorBoundary}
+          />
+        </div>
       </div>
-      <RichTextPlugin
-        contentEditable={<ContentEditable className="editor-input" />}
-        placeholder={<div className="editor-placeholder">Start typing…</div>}
-        ErrorBoundary={LexicalErrorBoundary}
-      />
       <HistoryPlugin />
     </LexicalComposer>
   );

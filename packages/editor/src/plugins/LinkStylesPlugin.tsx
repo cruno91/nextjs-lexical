@@ -80,7 +80,7 @@ export function LinkStylesPlugin() {
 
   return (
     <>
-      <Button type="button" variant="outline" onClick={() => setOpen(true)} title="Insert link or button">
+      <Button type="button" variant="ghost" size="sm" onClick={() => setOpen(true)} title="Insert link or button" className="h-8">
         Link
       </Button>
       <Dialog open={open} onOpenChange={setOpen}>
