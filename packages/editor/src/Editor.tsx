@@ -15,14 +15,16 @@ import { TextStyleDropdownPlugin } from "./plugins/TextStyleDropdownPlugin";
 import { HeadingNode } from "@lexical/rich-text";
 import { LinkNode } from "@lexical/link";
 import { ButtonLinkNode } from "./nodes/ButtonLinkNode";
+import { ThreeUpNode } from "./nodes/ThreeUpNode";
 import { LinkStylesPlugin } from "./plugins/LinkStylesPlugin";
+import { ThreeUpToolbarPlugin } from "./plugins/ThreeUpToolbarPlugin";
 import { Card, CardContent, CardHeader } from "@repo/ui/components/ui/card";
 
 export function Editor() {
   const initialConfig = {
     namespace: "MyEditor",
     theme,
-    nodes: [HeadingNode, LinkNode, ButtonLinkNode],
+    nodes: [HeadingNode, LinkNode, ButtonLinkNode, ThreeUpNode],
     onError: (error: Error) => {
       console.error("Lexical error:", error);
     },
@@ -41,6 +43,8 @@ export function Editor() {
             <StrikethroughToolbarPlugin />
             <div className="h-6 w-px bg-border mx-1" aria-hidden="true" />
             <LinkStylesPlugin />
+            <div className="h-6 w-px bg-border mx-1" aria-hidden="true" />
+            <ThreeUpToolbarPlugin />
           </div>
         </CardHeader>
         <CardContent>
