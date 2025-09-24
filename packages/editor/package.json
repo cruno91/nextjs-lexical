@@ -10,12 +10,15 @@
     "lint": "echo 'Add lint script here'"
   },
   "dependencies": {
-    "@lexical/react": "^0.33.1",
-    "@lexical/rich-text": "^0.33.1",
-    "@lexical/selection": "^0.33.1",
-    "@lexical/link": "^0.33.1",
+    "@lexical/html": "^0.35.0",
+    "@lexical/link": "^0.35.0",
+    "@lexical/react": "^0.35.0",
+    "@lexical/rich-text": "^0.35.0",
+    "@lexical/selection": "^0.35.0",
     "@repo/ui": "workspace:*",
-    "lexical": "^0.33.1",
+    "lexical": "^0.35.0",
+    "lucide-react": "catalog:",
+    "openai": "^5.23.0",
     "react": "catalog:react",
     "react-dom": "catalog:react"
   },
