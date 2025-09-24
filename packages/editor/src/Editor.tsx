@@ -18,9 +18,15 @@ import { ButtonLinkNode } from "./nodes/ButtonLinkNode";
 import { ThreeUpNode } from "./nodes/ThreeUpNode";
 import { LinkStylesPlugin } from "./plugins/LinkStylesPlugin";
 import { ThreeUpToolbarPlugin } from "./plugins/ThreeUpToolbarPlugin";
+import { OpenAISuggestionsPlugin } from "./plugins/OpenAISuggestionsPlugin";
 import { Card, CardContent, CardHeader } from "@repo/ui/components/ui/card";
+import { OpenAIConfig } from "./types/openai";
 
-export function Editor() {
+interface EditorProps {
+  openaiConfig?: OpenAIConfig;
+}
+
+export function Editor({ openaiConfig }: EditorProps = {}) {
   const initialConfig = {
     namespace: "MyEditor",
     theme,
@@ -45,6 +51,12 @@ export function Editor() {
             <LinkStylesPlugin />
             <div className="h-6 w-px bg-border mx-1" aria-hidden="true" />
             <ThreeUpToolbarPlugin />
+            {openaiConfig && (
+              <>
+                <div className="h-6 w-px bg-border mx-1" aria-hidden="true" />
+                <OpenAISuggestionsPlugin config={openaiConfig} />
+              </>
+            )}
           </div>
         </CardHeader>
         <CardContent>
